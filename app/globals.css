@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1a002b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a002b;
   }
 }
 
@@ -24,4 +22,31 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--background) var(--background); 
+}
+
+.chat-bubble {
+  position: relative;
+}
+
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(48deg) skew(5deg);
+}
+
+.chat-bubble--right::after {
+  right: 15px;
+}
+
+.chat-bubble--left::after {
+  left: 15px;
 }
